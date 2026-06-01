@@ -29,6 +29,10 @@ body {
   text-align: right;
 }
 
+.lang-switcher-container button:not(:first-child) {
+  display: none;
+}
+
 .lang-switcher-btn {
   background-color: #0f172a;
   color: #ffffff;
