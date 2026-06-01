@@ -1,0 +1,272 @@
+/* Modern Minimalist & Professional Print Palette */
+@page {
+  size: A4;
+  margin: 18mm 16mm;
+  background-color: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Browser View Page Wrapping - Centered A4 mockup with premium shadow */
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  color: #1e293b;
+  background-color: #f1f5f9; /* Sleek light grey slate background for web viewing */
+  padding: 50px 0;
+  line-height: 1.5;
+  font-size: 10.5pt;
+}
+
+.lang-switcher-container {
+  width: 800px;
+  margin: 0 auto 20px auto;
+  text-align: right;
+}
+
+.lang-switcher-btn {
+  background-color: #0f172a;
+  color: #ffffff;
+  border: none;
+  padding: 8px 18px;
+  font-size: 9.5pt;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+  transition: all 0.2s ease;
+}
+
+.lang-switcher-btn:hover {
+  background-color: #2563eb;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+}
+
+.cv-page {
+  background-color: #ffffff;
+  width: 800px;
+  margin: 0 auto;
+  padding: 50px 45px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  border-radius: 8px;
+}
+
+/* Layout Architecture using Tables (WeasyPrint Friendly, Flex/Grid Banned) */
+.header-table {
+  display: table;
+  width: 100%;
+  border-bottom: 2px solid #0f172a;
+  padding-bottom: 14px;
+  margin-bottom: 24px;
+}
+
+.header-cell-left {
+  display: table-cell;
+  vertical-align: bottom;
+  width: 55%;
+}
+
+.header-cell-right {
+  display: table-cell;
+  vertical-align: bottom;
+  width: 45%;
+  text-align: right;
+  font-size: 10pt;
+  color: #475569;
+  line-height: 1.45;
+  font-weight: 500;
+}
+
+[dir="rtl"] .header-cell-left {
+  text-align: right;
+}
+
+[dir="rtl"] .header-cell-right {
+  text-align: left;
+}
+
+h1 {
+  font-size: 26pt;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.75px;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 11pt;
+  color: #2563eb;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 6px;
+}
+
+/* Section Block Architecture */
+.section-block {
+  margin-bottom: 24px;
+  display: block;
+}
+
+h2 {
+  font-size: 12.5pt;
+  letter-spacing: 0.5px;
+  color: #0f172a;
+  font-weight: 700;
+  border-left: 4px solid #2563eb;
+  padding-left: 10px;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+/* RTL Specific adjustments for headers */
+[dir="rtl"] h2 {
+  border-left: none;
+  border-right: 4px solid #2563eb;
+  padding-left: 0;
+  padding-right: 10px;
+}
+
+p {
+  color: #334155;
+  text-align: justify;
+}
+
+/* Item blocks for Jobs & Education */
+.item-block {
+  margin-bottom: 14px;
+  display: block;
+}
+
+.item-title-row {
+  display: table;
+  width: 100%;
+  margin-bottom: 4px;
+}
+
+.item-title {
+  display: table-cell;
+  font-weight: 700;
+  color: #0f172a;
+  font-size: 11pt;
+}
+
+.item-date {
+  display: table-cell;
+  text-align: right;
+  color: #64748b;
+  font-size: 9.5pt;
+  font-weight: 600;
+}
+
+[dir="rtl"] .item-date {
+  text-align: left;
+}
+
+.bullet-list {
+  list-style-type: square;
+  margin-left: 20px;
+  margin-right: 0;
+  color: #334155;
+}
+
+[dir="rtl"] .bullet-list {
+  margin-left: 0;
+  margin-right: 20px;
+}
+
+.bullet-list li {
+  margin-bottom: 5px;
+  padding-left: 2px;
+}
+
+/* Skill & Language Parallel Tables Layout */
+.tables-layout {
+  display: table;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.table-col {
+  display: table-cell;
+  width: 50%;
+  vertical-align: top;
+}
+
+/* Gutters handled perfectly for LTR / RTL */
+[dir="ltr"] .table-col-left {
+  padding-right: 18px;
+}
+[dir="ltr"] .table-col-right {
+  padding-left: 18px;
+}
+[dir="rtl"] .table-col-left {
+  padding-left: 18px;
+}
+[dir="rtl"] .table-col-right {
+  padding-right: 18px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9.5pt;
+  margin-top: 6px;
+}
+
+th,
+td {
+  padding: 9px 12px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+[dir="rtl"] th,
+[dir="rtl"] td {
+  text-align: right;
+}
+
+th {
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-weight: 700;
+  border-top: 1px solid #cbd5e1;
+  border-bottom: 2px solid #cbd5e1;
+  text-transform: uppercase;
+  font-size: 8.5pt;
+  letter-spacing: 0.5px;
+}
+
+tr:nth-child(even) td {
+  background-color: #f8fafc;
+}
+
+.tech-font {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-weight: 600;
+  color: #1e3a8a;
+  font-size: 9pt;
+}
+
+/* Flawless print override stylesheet */
+@media print {
+  body {
+    background-color: #ffffff;
+    padding: 0;
+  }
+  .lang-switcher-container {
+    display: none !important;
+  }
+  .cv-page {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
