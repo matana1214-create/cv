@@ -27,12 +27,13 @@ const cvData = {
         ],
       },
       {
-        title: "Combat Team Commander | IDF Givati Reconnaissance Patrol",
+        title:
+          "Combat Team Commander (Captain) | IDF Givati Reconnaissance Patrol",
         date: "2019 — 2023",
         bullets: [
-          "Commanded 30 combat soldiers and 5 subordinate officers with full operational and logistical responsibility.",
+          "Executed duties as a Lead Officer, commanding 30 combat soldiers and 5 subordinate officers with full operational and logistical responsibility.",
           "Managed complex schedules, task allocation, and training programs under intense, 24/7 conditions.",
-          "Handled direct communication with senior leadership and resolved logistical problems in real time.",
+          "Led direct communication with senior leadership and resolved complex logistical problems in real time.",
         ],
       },
     ],
@@ -47,7 +48,11 @@ const cvData = {
       {
         title: "Background & Training",
         date: "Various",
-        desc: "IDF Infantry Officer Certification (2021); Advanced Torah Studies (Ma'aleh Eliyahu, 2017-2019); Full Matriculation (5 Units Math & Physics).",
+        bullets: [
+          "IDF Infantry Officer Certification (2021).",
+          "Advanced Torah Studies (Ma'aleh Eliyahu, 2017-2019).",
+          "Full Matriculation (5 Units Math & Physics).",
+        ],
       },
     ],
     skillsTitle: "Technical Skills",
@@ -112,7 +117,11 @@ const cvData = {
       {
         title: "רקע והכשרות",
         date: "שונות",
-        desc: 'קורס קציני חי"ר (2021); לימודים תורניים (ישיבת מעלה אליהו, 2017-2019); בגרות מלאה (5 יח"ל מתמטיקה ופיזיקה).',
+        bullets: [
+          'קורס קציני חי"ר (2021).',
+          "לימודים תורניים (ישיבת מעלה אליהו, 2017-2019).",
+          'בגרות מלאה (5 יח"ל מתמטיקה ופיזיקה).',
+        ],
       },
     ],
     skillsTitle: "כישורים",
@@ -133,8 +142,7 @@ const cvData = {
   },
 };
 
-function toggleLanguage() {
-  currentLang = currentLang === "en" ? "he" : "en";
+function renderCV() {
   const data = cvData[currentLang];
   const content = document.getElementById("cv-content");
 
@@ -187,9 +195,19 @@ function toggleLanguage() {
           <span class="item-title">${edu.title}</span>
           <span class="item-date">${edu.date}</span>
         </div>
-        <p style="margin-top: 4px;">${edu.desc}</p>
-      </div>
     `;
+
+    if (edu.bullets) {
+      html += `<ul class="bullet-list" style="margin-top: 4px;">`;
+      edu.bullets.forEach((bullet) => {
+        html += `<li>${bullet}</li>`;
+      });
+      html += `</ul>`;
+    } else {
+      html += `<p style="margin-top: 4px;">${edu.desc}</p>`;
+    }
+
+    html += `</div>`;
   });
 
   html += `</div>
@@ -226,4 +244,9 @@ function toggleLanguage() {
   content.innerHTML = html;
   document.getElementById("btn-toggle-lang").innerText =
     currentLang === "en" ? "עברית (Hebrew)" : "English";
+}
+
+function toggleLanguage() {
+  currentLang = currentLang === "en" ? "he" : "en";
+  renderCV();
 }
