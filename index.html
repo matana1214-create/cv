@@ -8,9 +8,14 @@
     <script src="cv.js?v=2"></script>
   </head>
   <body onload="renderCV()">
-    <div class="lang-switcher-container">
+    <div class="actions-container">
       <button
-        class="lang-switcher-btn"
+        class="action-btn download-btn"
+        id="btn-download-pdf"
+        onclick="downloadPDF()"
+      ></button>
+      <button
+        class="action-btn lang-btn"
         id="btn-toggle-lang"
         onclick="toggleLanguage()"
       >
