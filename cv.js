@@ -1,5 +1,3 @@
-// Logic Layer: Clean, structured dual-language rendering engine
-
 let currentLang = "en";
 
 const cvData = {
@@ -98,7 +96,7 @@ const cvData = {
         ],
       },
       {
-        title: "לוחם ומפקד וצוות | סיירת גבעתי",
+        title: "לוחם ומפקד צוות | סיירת גבעתי",
         date: "2019 — 2023",
         bullets: [
           "אחריות פיקודית ולוגיסטית מלאה על כ-30 לוחמים ו-5 מפקדי משנה.",
@@ -110,7 +108,7 @@ const cvData = {
     educationTitle: "השכלה",
     edu: [
       {
-        title: "תואר ראשון (.B.A) במערכות מידע ניהוליות ומנהל עסקים",
+        title: "סטודנט, תואר ראשון (.B.A) במערכות מידע ניהוליות ומנהל עסקים",
         date: "2025 — הווה",
         desc: "המרכז האקדמי פרס.",
       },
@@ -242,11 +240,26 @@ function renderCV() {
   `;
 
   content.innerHTML = html;
+
+  // עדכון טקסט לכפתור השפה
   document.getElementById("btn-toggle-lang").innerText =
-    currentLang === "en" ? "עברית (Hebrew)" : "English";
+    currentLang === "en" ? "(Hebrew) עברית" : "English (אנגלית)";
+
+  // עדכון טקסט ואייקון לכפתור ההורדה
+  const downloadIcon = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: -4px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>`;
+
+  document.getElementById("btn-download-pdf").innerHTML =
+    currentLang === "en"
+      ? `${downloadIcon} Download PDF`
+      : `${downloadIcon} PDF-הורד כ`;
 }
 
 function toggleLanguage() {
   currentLang = currentLang === "en" ? "he" : "en";
   renderCV();
+}
+
+// פונקציית ההורדה ל-PDF מפעילה את מנגנון ההדפסה של הדפדפן לשמירה נקייה
+function downloadPDF() {
+  window.print();
 }
