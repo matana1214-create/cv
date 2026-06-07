@@ -23,34 +23,53 @@ body {
   font-size: 10.5pt;
 }
 
-.lang-switcher-container {
+/* Actions Container (Language + Download) */
+.actions-container {
   width: 800px;
   margin: 0 auto 20px auto;
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
 }
 
-.lang-switcher-container button:not(:first-child) {
-  display: none;
-}
-
-.lang-switcher-btn {
-  background-color: #2563eb;
-  color: #ffffff;
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   border: none;
   padding: 8px 18px;
   font-size: 9.5pt;
   font-weight: 600;
   border-radius: 6px;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.18);
   transition: all 0.2s ease;
+  font-family: inherit;
 }
 
-.lang-switcher-btn:hover,
-.lang-switcher-btn:focus,
-.lang-switcher-btn:active {
+/* Language Button Style */
+.lang-btn {
   background-color: #2563eb;
+  color: #ffffff;
   box-shadow: 0 4px 12px rgba(37, 99, 235, 0.18);
+}
+
+.lang-btn:hover {
+  background-color: #1d4ed8;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
+}
+
+/* Download Button Style */
+.download-btn {
+  background-color: #ffffff;
+  color: #2563eb;
+  border: 1px solid #2563eb;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+.download-btn:hover {
+  background-color: #eff6ff;
+  border-color: #1d4ed8;
+  color: #1d4ed8;
 }
 
 .cv-page {
@@ -62,7 +81,7 @@ body {
   border-radius: 8px;
 }
 
-/* Layout Architecture using Tables (WeasyPrint Friendly, Flex/Grid Banned) */
+/* Layout Architecture using Tables */
 .header-table {
   display: table;
   width: 100%;
@@ -204,7 +223,6 @@ p {
   vertical-align: top;
 }
 
-/* Gutters handled perfectly for LTR / RTL */
 [dir="ltr"] .table-col-left {
   padding-right: 18px;
 }
@@ -265,7 +283,8 @@ tr:nth-child(even) td {
     background-color: #ffffff;
     padding: 0;
   }
-  .lang-switcher-container {
+  /* מסתיר את הכפתורים בעת הדפסה/שמירה כ-PDF */
+  .actions-container {
     display: none !important;
   }
   .cv-page {
@@ -283,19 +302,17 @@ tr:nth-child(even) td {
     font-size: 10pt;
   }
 
-  .lang-switcher-container {
+  .actions-container {
     width: auto;
     margin: 0 16px 18px;
-    text-align: center;
+    flex-direction: column;
   }
 
-  .lang-switcher-btn {
+  .action-btn {
     width: 100%;
-    max-width: 420px;
-    display: inline-block;
+    justify-content: center;
     font-size: 10.5pt;
     padding: 12px 16px;
-    border-radius: 10px;
   }
 
   .cv-page {
