@@ -10,7 +10,7 @@ const cvData = {
     location: "Location: Lod, Israel",
     summaryTitle: "Professional Summary",
     summary:
-      "Tactical Product Manager with hands-on experience leading logistics products and defining operational system requirements for the IDF Ground Forces (including work with Elbit Systems). Proven ability to manage teams, solve technical problems under pressure, and deliver working systems on tight schedules.",
+      "Technical Product Manager with hands-on experience leading logistics products and defining operational system requirements for the IDF Ground Forces (including work with Elbit Systems). Proven ability to manage teams, solve technical problems under pressure, and deliver working systems on tight schedules.",
     experienceTitle: "Experience",
     jobs: [
       {
