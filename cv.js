@@ -128,7 +128,7 @@ const cvData = {
       ["ניהול ומתודולוגיות", "Agile, Jira, ניהול פרויקטים, אפיון דרישות"],
       [
         "טכנולוגי",
-        "SQL, Python, Java, JavaScript (Node.js, Express), Tableau, ניתוח מערכות",
+        "SQL, Python, Java, JavaScript (Node.js, Express), Tableau, System Analysis",
       ],
     ],
     languagesTitle: "שפות",
